@@ -16,18 +16,5 @@ namespace Progetto_hotel
         {
             InitializeComponent();
         }
-
-        private void btn_prenota_Click(object sender, EventArgs e)
-        {
-            int camera, stagione, prezzo;
-
-            camera = cmb_stanza.SelectedIndex;
-            stagione = cmb_stagione.SelectedIndex;
-
-            retdtfcyfcyfckyf
-        }
-
-
-        trssdfsdfsdfsd
     }
 }
