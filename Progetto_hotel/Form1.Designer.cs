@@ -34,6 +34,9 @@
             this.btn_prenota = new System.Windows.Forms.Button();
             this.lbl_prezzob = new System.Windows.Forms.Label();
             this.lbl_sconto = new System.Windows.Forms.Label();
+            this.lbl_prezzo = new System.Windows.Forms.Label();
+            this.lbl_giorni = new System.Windows.Forms.Label();
+            this.txt_giorni = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // chk_parcheggio
@@ -53,11 +56,12 @@
             "Bassa stagione+0€",
             "Media stagione+5€",
             "Alta stagione+10€"});
-            this.cmb_stagione.Location = new System.Drawing.Point(314, 116);
+            this.cmb_stagione.Location = new System.Drawing.Point(325, 70);
             this.cmb_stagione.Name = "cmb_stagione";
             this.cmb_stagione.Size = new System.Drawing.Size(121, 21);
             this.cmb_stagione.TabIndex = 1;
             this.cmb_stagione.Text = "Stagione";
+            this.cmb_stagione.SelectedIndexChanged += new System.EventHandler(this.cmb_stagione_SelectedIndexChanged);
             // 
             // cmb_stanza
             // 
@@ -66,15 +70,16 @@
             "Base +0€",
             "Media+15€",
             "Alta+30€"});
-            this.cmb_stanza.Location = new System.Drawing.Point(131, 116);
+            this.cmb_stanza.Location = new System.Drawing.Point(132, 70);
             this.cmb_stanza.Name = "cmb_stanza";
             this.cmb_stanza.Size = new System.Drawing.Size(121, 21);
             this.cmb_stanza.TabIndex = 2;
             this.cmb_stanza.Text = "Tipo stanza";
+            this.cmb_stanza.SelectedIndexChanged += new System.EventHandler(this.cmb_stanza_SelectedIndexChanged);
             // 
             // btn_prenota
             // 
-            this.btn_prenota.Location = new System.Drawing.Point(252, 337);
+            this.btn_prenota.Location = new System.Drawing.Point(252, 307);
             this.btn_prenota.Name = "btn_prenota";
             this.btn_prenota.Size = new System.Drawing.Size(75, 23);
             this.btn_prenota.TabIndex = 3;
@@ -101,11 +106,39 @@
             this.lbl_sconto.Text = "Sconto: (Non si applica al parcheggio)\r\n2 giorni o meno 0%\r\n3-7 giorni 25%\r\n8+ gi" +
     "orni 35%";
             // 
+            // lbl_prezzo
+            // 
+            this.lbl_prezzo.AutoSize = true;
+            this.lbl_prezzo.Location = new System.Drawing.Point(270, 395);
+            this.lbl_prezzo.Name = "lbl_prezzo";
+            this.lbl_prezzo.Size = new System.Drawing.Size(39, 13);
+            this.lbl_prezzo.TabIndex = 6;
+            this.lbl_prezzo.Text = "Prezzo";
+            // 
+            // lbl_giorni
+            // 
+            this.lbl_giorni.AutoSize = true;
+            this.lbl_giorni.Location = new System.Drawing.Point(215, 115);
+            this.lbl_giorni.Name = "lbl_giorni";
+            this.lbl_giorni.Size = new System.Drawing.Size(163, 13);
+            this.lbl_giorni.TabIndex = 7;
+            this.lbl_giorni.Text = "Per quanti giorni vuoi pernottare?";
+            // 
+            // txt_giorni
+            // 
+            this.txt_giorni.Location = new System.Drawing.Point(235, 131);
+            this.txt_giorni.Name = "txt_giorni";
+            this.txt_giorni.Size = new System.Drawing.Size(100, 20);
+            this.txt_giorni.TabIndex = 8;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 450);
+            this.ClientSize = new System.Drawing.Size(653, 450);
+            this.Controls.Add(this.txt_giorni);
+            this.Controls.Add(this.lbl_giorni);
+            this.Controls.Add(this.lbl_prezzo);
             this.Controls.Add(this.lbl_sconto);
             this.Controls.Add(this.lbl_prezzob);
             this.Controls.Add(this.btn_prenota);
@@ -127,6 +160,9 @@
         private System.Windows.Forms.Button btn_prenota;
         private System.Windows.Forms.Label lbl_prezzob;
         private System.Windows.Forms.Label lbl_sconto;
+        private System.Windows.Forms.Label lbl_prezzo;
+        private System.Windows.Forms.Label lbl_giorni;
+        private System.Windows.Forms.TextBox txt_giorni;
     }
 }
 
