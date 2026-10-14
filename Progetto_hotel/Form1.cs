@@ -17,14 +17,15 @@ namespace Progetto_hotel
             InitializeComponent();
         }
 
-        int camera, stagione, giorni;
+        int camera, stagione, giorni, parcheggio;
         float sconto;
 
         private void btn_prenota_Click(object sender, EventArgs e)
         {
+            
             float prezzo;
 
-            giorni = Convert.ToInt32(txt_giorni.Text);
+            giorni = (int)nud_giorni.Value;
 
             if (giorni <= 2 && giorni > 0)
             {
@@ -40,9 +41,22 @@ namespace Progetto_hotel
                 sconto = 0.35f;
             }
 
-            prezzo = ((15 + camera + stagione) * giorni) * (1 - sconto);
+            prezzo = ((15 + camera + stagione) * giorni) * (1 - sconto) + (parcheggio * giorni);
 
             lbl_prezzo.Text = "Il prezzo della camera è: " + prezzo.ToString() + "€";
+        }
+
+
+        private void chk_parcheggio_CheckedChanged(object sender, EventArgs e)
+        {
+            if(chk_parcheggio.Checked)
+            {
+                parcheggio = 5;
+            }
+            else
+            {
+                parcheggio = 0;
+            }
         }
 
         private void cmb_stagione_SelectedIndexChanged(object sender, EventArgs e)

@@ -36,7 +36,12 @@
             this.lbl_sconto = new System.Windows.Forms.Label();
             this.lbl_prezzo = new System.Windows.Forms.Label();
             this.lbl_giorni = new System.Windows.Forms.Label();
-            this.txt_giorni = new System.Windows.Forms.TextBox();
+            this.lbl_stagione = new System.Windows.Forms.Label();
+            this.lbl_stanza = new System.Windows.Forms.Label();
+            this.nud_giorni = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_giorni)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // chk_parcheggio
@@ -48,6 +53,7 @@
             this.chk_parcheggio.TabIndex = 0;
             this.chk_parcheggio.Text = "Parcheggio privato (5€ al giorno)";
             this.chk_parcheggio.UseVisualStyleBackColor = true;
+            this.chk_parcheggio.CheckedChanged += new System.EventHandler(this.chk_parcheggio_CheckedChanged);
             // 
             // cmb_stagione
             // 
@@ -60,7 +66,7 @@
             this.cmb_stagione.Name = "cmb_stagione";
             this.cmb_stagione.Size = new System.Drawing.Size(121, 21);
             this.cmb_stagione.TabIndex = 1;
-            this.cmb_stagione.Text = "Stagione";
+            this.cmb_stagione.Text = "Bassa stagione+0€";
             this.cmb_stagione.SelectedIndexChanged += new System.EventHandler(this.cmb_stagione_SelectedIndexChanged);
             // 
             // cmb_stanza
@@ -74,7 +80,7 @@
             this.cmb_stanza.Name = "cmb_stanza";
             this.cmb_stanza.Size = new System.Drawing.Size(121, 21);
             this.cmb_stanza.TabIndex = 2;
-            this.cmb_stanza.Text = "Tipo stanza";
+            this.cmb_stanza.Text = "Base +0€";
             this.cmb_stanza.SelectedIndexChanged += new System.EventHandler(this.cmb_stanza_SelectedIndexChanged);
             // 
             // btn_prenota
@@ -111,9 +117,9 @@
             this.lbl_prezzo.AutoSize = true;
             this.lbl_prezzo.Location = new System.Drawing.Point(270, 395);
             this.lbl_prezzo.Name = "lbl_prezzo";
-            this.lbl_prezzo.Size = new System.Drawing.Size(39, 13);
+            this.lbl_prezzo.Size = new System.Drawing.Size(42, 13);
             this.lbl_prezzo.TabIndex = 6;
-            this.lbl_prezzo.Text = "Prezzo";
+            this.lbl_prezzo.Text = "Prezzo:";
             // 
             // lbl_giorni
             // 
@@ -124,19 +130,53 @@
             this.lbl_giorni.TabIndex = 7;
             this.lbl_giorni.Text = "Per quanti giorni vuoi pernottare?";
             // 
-            // txt_giorni
+            // lbl_stagione
             // 
-            this.txt_giorni.Location = new System.Drawing.Point(235, 131);
-            this.txt_giorni.Name = "txt_giorni";
-            this.txt_giorni.Size = new System.Drawing.Size(100, 20);
-            this.txt_giorni.TabIndex = 8;
+            this.lbl_stagione.AutoSize = true;
+            this.lbl_stagione.Location = new System.Drawing.Point(364, 54);
+            this.lbl_stagione.Name = "lbl_stagione";
+            this.lbl_stagione.Size = new System.Drawing.Size(49, 13);
+            this.lbl_stagione.TabIndex = 9;
+            this.lbl_stagione.Text = "Stagione";
+            // 
+            // lbl_stanza
+            // 
+            this.lbl_stanza.AutoSize = true;
+            this.lbl_stanza.Location = new System.Drawing.Point(160, 54);
+            this.lbl_stanza.Name = "lbl_stanza";
+            this.lbl_stanza.Size = new System.Drawing.Size(62, 13);
+            this.lbl_stanza.TabIndex = 10;
+            this.lbl_stanza.Text = "Tipo stanza";
+            // 
+            // nud_giorni
+            // 
+            this.nud_giorni.Location = new System.Drawing.Point(234, 131);
+            this.nud_giorni.Name = "nud_giorni";
+            this.nud_giorni.Size = new System.Drawing.Size(120, 20);
+            this.nud_giorni.TabIndex = 11;
+            this.nud_giorni.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(519, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 450);
-            this.Controls.Add(this.txt_giorni);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.nud_giorni);
+            this.Controls.Add(this.lbl_stanza);
+            this.Controls.Add(this.lbl_stagione);
             this.Controls.Add(this.lbl_giorni);
             this.Controls.Add(this.lbl_prezzo);
             this.Controls.Add(this.lbl_sconto);
@@ -147,6 +187,8 @@
             this.Controls.Add(this.chk_parcheggio);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.nud_giorni)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +204,10 @@
         private System.Windows.Forms.Label lbl_sconto;
         private System.Windows.Forms.Label lbl_prezzo;
         private System.Windows.Forms.Label lbl_giorni;
-        private System.Windows.Forms.TextBox txt_giorni;
+        private System.Windows.Forms.Label lbl_stagione;
+        private System.Windows.Forms.Label lbl_stanza;
+        private System.Windows.Forms.NumericUpDown nud_giorni;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
