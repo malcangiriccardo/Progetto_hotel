@@ -44,6 +44,7 @@ namespace Progetto_hotel
             prezzo = ((15 + camera + stagione) * giorni) * (1 - sconto) + (parcheggio * giorni);
 
             lbl_prezzo.Text = "Il prezzo della camera è: " + prezzo.ToString() + "€";
+            jgdfyugf
         }
 
 
