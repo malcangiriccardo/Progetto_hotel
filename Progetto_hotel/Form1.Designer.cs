@@ -53,7 +53,7 @@
             // chk_parcheggio
             // 
             this.chk_parcheggio.AutoSize = true;
-            this.chk_parcheggio.Location = new System.Drawing.Point(462, 351);
+            this.chk_parcheggio.Location = new System.Drawing.Point(469, 351);
             this.chk_parcheggio.Name = "chk_parcheggio";
             this.chk_parcheggio.Size = new System.Drawing.Size(179, 17);
             this.chk_parcheggio.TabIndex = 0;
@@ -68,7 +68,7 @@
             "Bassa stagione+0€",
             "Media stagione+5€",
             "Alta stagione+10€"});
-            this.cmb_stagione.Location = new System.Drawing.Point(497, 147);
+            this.cmb_stagione.Location = new System.Drawing.Point(498, 147);
             this.cmb_stagione.Name = "cmb_stagione";
             this.cmb_stagione.Size = new System.Drawing.Size(121, 21);
             this.cmb_stagione.TabIndex = 1;
@@ -82,7 +82,7 @@
             "Base +0€",
             "Media+15€",
             "Alta+30€"});
-            this.cmb_stanza.Location = new System.Drawing.Point(497, 196);
+            this.cmb_stanza.Location = new System.Drawing.Point(498, 196);
             this.cmb_stanza.Name = "cmb_stanza";
             this.cmb_stanza.Size = new System.Drawing.Size(121, 21);
             this.cmb_stanza.TabIndex = 2;
@@ -91,7 +91,7 @@
             // 
             // btn_prenota
             // 
-            this.btn_prenota.Location = new System.Drawing.Point(520, 374);
+            this.btn_prenota.Location = new System.Drawing.Point(521, 374);
             this.btn_prenota.Name = "btn_prenota";
             this.btn_prenota.Size = new System.Drawing.Size(75, 23);
             this.btn_prenota.TabIndex = 3;
@@ -102,7 +102,7 @@
             // lbl_prezzob
             // 
             this.lbl_prezzob.AutoSize = true;
-            this.lbl_prezzob.Location = new System.Drawing.Point(519, 92);
+            this.lbl_prezzob.Location = new System.Drawing.Point(515, 92);
             this.lbl_prezzob.Name = "lbl_prezzob";
             this.lbl_prezzob.Size = new System.Drawing.Size(86, 13);
             this.lbl_prezzob.TabIndex = 4;
@@ -111,7 +111,7 @@
             // lbl_sconto
             // 
             this.lbl_sconto.AutoSize = true;
-            this.lbl_sconto.Location = new System.Drawing.Point(462, 272);
+            this.lbl_sconto.Location = new System.Drawing.Point(465, 272);
             this.lbl_sconto.Name = "lbl_sconto";
             this.lbl_sconto.Size = new System.Drawing.Size(187, 52);
             this.lbl_sconto.TabIndex = 5;
@@ -130,7 +130,7 @@
             // lbl_giorni
             // 
             this.lbl_giorni.AutoSize = true;
-            this.lbl_giorni.Location = new System.Drawing.Point(478, 233);
+            this.lbl_giorni.Location = new System.Drawing.Point(477, 233);
             this.lbl_giorni.Name = "lbl_giorni";
             this.lbl_giorni.Size = new System.Drawing.Size(163, 13);
             this.lbl_giorni.TabIndex = 7;
@@ -139,7 +139,7 @@
             // lbl_stagione
             // 
             this.lbl_stagione.AutoSize = true;
-            this.lbl_stagione.Location = new System.Drawing.Point(533, 131);
+            this.lbl_stagione.Location = new System.Drawing.Point(534, 131);
             this.lbl_stagione.Name = "lbl_stagione";
             this.lbl_stagione.Size = new System.Drawing.Size(49, 13);
             this.lbl_stagione.TabIndex = 9;
@@ -148,7 +148,7 @@
             // lbl_stanza
             // 
             this.lbl_stanza.AutoSize = true;
-            this.lbl_stanza.Location = new System.Drawing.Point(533, 180);
+            this.lbl_stanza.Location = new System.Drawing.Point(527, 180);
             this.lbl_stanza.Name = "lbl_stanza";
             this.lbl_stanza.Size = new System.Drawing.Size(62, 13);
             this.lbl_stanza.TabIndex = 10;
@@ -189,13 +189,14 @@
             // btn_info
             // 
             this.btn_info.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_info.Location = new System.Drawing.Point(597, 12);
+            this.btn_info.Location = new System.Drawing.Point(600, 12);
             this.btn_info.Name = "btn_info";
             this.btn_info.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btn_info.Size = new System.Drawing.Size(44, 39);
+            this.btn_info.Size = new System.Drawing.Size(41, 39);
             this.btn_info.TabIndex = 14;
             this.btn_info.Text = "?";
             this.btn_info.UseVisualStyleBackColor = true;
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
             // 
             // grb_info
             // 
@@ -206,6 +207,7 @@
             this.grb_info.Size = new System.Drawing.Size(379, 260);
             this.grb_info.TabIndex = 15;
             this.grb_info.TabStop = false;
+            this.grb_info.Visible = false;
             // 
             // lbl_info
             // 
@@ -221,10 +223,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(653, 439);
-            this.Controls.Add(this.grb_info);
             this.Controls.Add(this.btn_info);
             this.Controls.Add(this.lbl_nome);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nud_giorni);
             this.Controls.Add(this.lbl_stanza);
             this.Controls.Add(this.lbl_stagione);
@@ -236,6 +236,8 @@
             this.Controls.Add(this.cmb_stanza);
             this.Controls.Add(this.cmb_stagione);
             this.Controls.Add(this.chk_parcheggio);
+            this.Controls.Add(this.grb_info);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.nud_giorni)).EndInit();
